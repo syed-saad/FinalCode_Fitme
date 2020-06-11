@@ -1,0 +1,167 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- new_dress
+- affirm
+- choose_gender
+- chest_entry
+- height_entry
+- waist_entry
+- occasion
+- choose_patterns
+- choose_clothtype
+- choose_fittings
+- choose_colour
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+entities:
+- chest
+- height
+- waist
+slots:
+  chest:
+    type: unfeaturized
+    auto_fill: false
+  height:
+    type: unfeaturized
+    auto_fill: false
+  mapping_slots:
+    type: unfeaturized
+  waist:
+    type: unfeaturized
+    auto_fill: false
+responses:
+  utter_greet:
+  - text: Hey! I am your personal AI stylist. I can recommend you clothes according
+      to your preferences and sizes. How may I help you today?
+  utter_newdress:
+  - text: Great! I can find perfect dresses for you. Can I ask you a couple of quick
+      questions to help me show you more personalized recommendations.
+  utter_gender:
+  - buttons:
+    - payload: /choose_gender
+      title: male
+    - payload: /choose_gender
+      title: female
+    text: 'choose gender:'
+  utter_know:
+  - text: Now let me know your body type.
+  utter_ask_chest:
+  - text: What is your chest size?
+  utter_ask_height:
+  - text: height?
+  utter_ask_waist:
+  - text: waist?
+  utter_slots_values:
+  - text: "please enter the required sizes: \n - chest:{chest}\n - height:{height}\n\
+      \ - waist:{waist}"
+  utter_done:
+  - text: great we are done!
+  utter_ask_feedback:
+  - text: Are these your measurements?
+  utter_askplans:
+  - text: So what occasion are you planning to dress for?
+  utter_askclothtype:
+  - buttons:
+    - payload: /choose_clothtype
+      title: formal wear
+    - payload: /choose_clothtype
+      title: casual wear
+    - payload: /choose_clothtype
+      title: semi formal
+    - payload: /choose_clothtype
+      title: tops
+    - payload: /choose_clothtype
+      title: frocks
+    text: Great! any suggestions for the type of clothes your prefer or some specific
+      patterns you like?
+  utter_askpatterns:
+  - buttons:
+    - payload: /choose_patterns
+      title: floral print
+    - payload: /choose_patterns
+      title: plain
+    - payload: /choose_paterns
+      title: checkered
+    - payload: /choose_patterns
+      title: striped
+    text: Any specific patterns you like?
+  utter_askfittings:
+  - buttons:
+    - payload: /choose_fittings
+      title: loose_fitting
+    - payload: /choose_fittings
+      title: slim_fitting
+    text: What fittings you prefer?
+  utter_askcolour:
+  - buttons:
+    - payload: /choose_colour
+      title: dark
+    - payload: /choose_colour
+      title: light
+    - payload: /choose_colour
+      title: bright
+    text: Colours
+  utter_clothimages:
+  - image: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dresshead.com%2Fwomens-floral-shirt-white-bo-ho-pastel-floral-print%2F&psig=AOvVaw2lZuI18Vba0JJxiLvVCwD0&ust=1591846733427000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLiN-Kup9ukCFQAAAAAdAAAAABAY
+    text: here are some clothes we selected for you.
+  utter_image2:
+  - image: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.walmart.com%2Fip%2FDYMADE-Women-s-Short-Sleeve-Floral-Printed-T-Shirt-Summer-Casual-Tops-Blouse%2F186251084&psig=AOvVaw2lZuI18Vba0JJxiLvVCwD0&ust=1591846733427000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLiN-Kup9ukCFQAAAAAdAAAAABBD
+    text: image 2
+  utter_image3:
+  - image: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F32760253113.html&psig=AOvVaw2lZuI18Vba0JJxiLvVCwD0&ust=1591846733427000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLiN-Kup9ukCFQAAAAAdAAAAABAN
+    text: image 3
+  utter_image4:
+  - image: ps://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dresshead.com%2Fwomens-floral-shirt-white-bo-ho-pastel-floral-print%2F&psig=AOvVaw2lZuI18Vba0JJxiLvVCwD0&ust=1591846733427000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLiN-Kup9ukCFQAAAAAdAAAAABAY
+    text: image 4
+  utter_image5:
+  - image: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.walmart.com%2Fip%2
+    text: image 5
+  utter_image6:
+  - image: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F32760253113.html&psig=AOvVaw2lZuI18Vba0JJxiLvVCwD0&ust=1591846733427000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLiN-Kup9ukCFQAAAAAdAAAAABAN
+    text: image 6
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am your personal AI stylist.
+actions:
+- utter_greet
+- utter_newdress
+- utter_gender
+- utter_know
+- utter_ask_chest
+- utter_ask_height
+- utter_ask_waist
+- utter_slots_values
+- utter_done
+- utter_ask_feedback
+- utter_askplans
+- utter_askclothtype
+- utter_askpatterns
+- utter_askfittings
+- utter_askcolour
+- utter_clothimages
+- utter_image2
+- utter_image3
+- utter_image4
+- utter_image5
+- utter_image6
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+forms:
+- size_form
